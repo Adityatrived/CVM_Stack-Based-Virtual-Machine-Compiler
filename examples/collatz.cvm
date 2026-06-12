@@ -1,0 +1,40 @@
+// ==========================================
+// CVM++ STRESS TEST 2: The Collatz Sequence
+// ==========================================
+
+let n = 27;
+let steps = 0;
+let max_value = n;
+
+// Print the starting number
+print(n);
+
+while (n > 1) {
+    // Is 'n' even or odd? (Simulating modulo 2)
+    let quotient = n / 2;
+    let product = quotient * 2;
+    let remainder = n - product;
+
+    if (remainder == 0) {
+        // n is even
+        n = n / 2;
+    } else {
+        // n is odd
+        n = (n * 3) + 1;
+    }
+
+    // Keep track of the highest number we see
+    if (n > max_value) {
+        max_value = n;
+    }
+
+    print(n);
+    steps = steps + 1;
+}
+
+// Print results
+print(888888);       // Marker: Total Steps
+print(steps);        // EXPECTED: 111
+
+print(999999);       // Marker: Highest number reached
+print(max_value);    // EXPECTED: 9232

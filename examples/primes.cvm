@@ -1,0 +1,42 @@
+// ==========================================
+// CVM++ STRESS TEST: Prime Number Generator
+// ==========================================
+
+let limit = 50;          // Find all primes up to this number
+let current = 2;         // Start checking from 2
+let total_primes = 0;    // Counter for how many primes we find
+
+// Loop through every number from 2 to 'limit'
+while (current <= limit) {
+    
+    let is_prime = true; 
+    let divisor = 2;
+
+    // We only need to check divisors up to (current - 1)
+    while (divisor < current) {
+        
+        // SIMULATING MODULO: remainder = current - ((current / divisor) * divisor)
+        let quotient = current / divisor;
+        let product = quotient * divisor;
+        let remainder = current - product;
+
+        // If the remainder is 0, it divides evenly, so it is NOT prime
+        if (remainder == 0) {
+            is_prime = false;
+        }
+        
+        divisor = divisor + 1;
+    }
+
+    // If it survived the loop without setting is_prime to false, print it!
+    if (is_prime == true) {
+        print(current);
+        total_primes = total_primes + 1;
+    }
+
+    current = current + 1;
+}
+
+// Print a marker and the total count
+print(999999);        // Output a fake "End of List" marker
+print(total_primes);  // Should print 15 (the number of primes under 50)

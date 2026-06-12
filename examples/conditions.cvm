@@ -1,0 +1,7 @@
+// Basic comparison logic
+let a = input(); // Ask user for input
+if (a > 10) {
+    print(1);    // Output 1 if greater than 10
+} else {
+    print(0);    // Output 0 otherwise
+}
