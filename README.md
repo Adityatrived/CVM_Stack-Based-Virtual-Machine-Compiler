@@ -1,1 +1,1 @@
-# CVM-
+# CVM++ (Stack-Based Virtual Machine & Compiler)
